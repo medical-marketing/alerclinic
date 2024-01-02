@@ -31,7 +31,7 @@ export default async function Icon() {
         }}
       >
         <img
-          src={favicon.url || "default_favicon.png"}
+          src={favicon.url || "/public/default_favicon.png"}
           alt={favicon.alt || ""}
         />
       </div>
