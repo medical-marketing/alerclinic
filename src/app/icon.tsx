@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { getSettings } from "@/app/utils";
 
 // Route segment config
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 // Image metadata
 export const size = {
@@ -15,6 +15,7 @@ export const contentType = "image/png";
 export default async function Icon() {
   const settings = await getSettings();
   const { favicon } = settings.data;
+  console.log("favicon", favicon);
   return new ImageResponse(
     (
       // ImageResponse JSX element
@@ -31,8 +32,8 @@ export default async function Icon() {
         }}
       >
         <img
-          src={favicon.url || "/public/default_favicon.png"}
-          alt={favicon.alt || ""}
+          src={favicon?.url || "/public/default_favicon.png"}
+          alt={favicon?.alt || ""}
         />
       </div>
     ),

@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 // import { client_tag } from "@/app/tag";
-require("dotenv").config();
 const nextConfig = {
   async redirects() {
     return [

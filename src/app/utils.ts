@@ -3,7 +3,6 @@ import { client_tag } from "@/app/tag";
 
 export const getSettings = async () => {
   const client = createClient();
-  // const {settings} = await client.getSingle("settings");
   const docs = await client.getByEveryTag([client_tag]);
 
   //@ts-ignore
